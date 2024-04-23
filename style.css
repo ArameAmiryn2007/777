@@ -653,7 +653,7 @@ input {
 		margin-top: 45px;
 	}
 	.img img {
-		top: 20px;
+		top: 100px;
 	}
 	.l {
 		display: none;
@@ -674,6 +674,7 @@ input {
 	.nav {
 		flex-wrap: wrap;
 		width: 90%;
+		margin-top: 5px;
 	}
 	.border {
 		width: 100%;
@@ -728,19 +729,24 @@ input {
 		display: none;
 	}
 	.ff {
-		width: 20%;
+		width: 30%;
 	}
 	.bacv {
 		position: relative;
 		top: -50px;
-		left: 330px;
+		
+	}
+	.text3{
+		font-size: 20px;
 	}
 	.img-im {
 		flex-wrap: wrap;
 		width: 100%;
 		height: 1050px;
 	}
-
+	.why h1{
+		font-size: 40px;
+	}
 	.inp {
 		flex-wrap: wrap;
 		width: 80%;
@@ -801,26 +807,22 @@ input {
     .orme2 h2{
         margin-top: 20px;
         width: 100%;
-        margin-left: 10px;
-    }
-    .orme2 p{
         
-        margin-left: 10px;
     }
-
+   
     .our1{
         flex-wrap: wrap;
         width: 94%;
-        margin-left: 10px;
+        
     }
     .all1{
         flex-wrap: wrap;
          width: 100%;
-         margin-left: 10px;
+     
     }
     .orme3{
         width: 350px;
-        margin-left: 10px;
+       
     }
     .border-0{
         border-bottom: 1px solid#ccc;
