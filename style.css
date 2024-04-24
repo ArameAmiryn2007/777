@@ -802,8 +802,9 @@ input {
     }
     .orme2{
         flex-wrap: wrap;
-        width: 90%;
-       
+        width: 100%;
+		margin: 20px auto;
+      
 
     }
     .orme2 h2{
@@ -814,7 +815,8 @@ input {
    
     .our1{
         flex-wrap: wrap;
-        width: 90%;
+        width: 100%;
+		margin: 20px auto;
         
     }
     .all1{
@@ -827,9 +829,14 @@ input {
        
     }
     .border-0{
-        border-bottom: 1px solid#ccc;
-        width: 50%;
+        border-bottom: 2px solid#ccc;
+        width: 90%;
     }
+	.qq{
+		border-bottom: 2px solid #ccc;
+		width: 90%;
+		
+	}
 }
     
     
