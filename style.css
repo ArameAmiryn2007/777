@@ -809,7 +809,7 @@ input {
     }
     .orme2 h2{
         margin-top: 20px;
-        width: 100%;
+        width: 75%;
         
     }
    
@@ -836,6 +836,9 @@ input {
 		border-bottom: 2px solid #ccc;
 		width: 90%;
 		
+	}
+	.sub2{
+		width: 85%;
 	}
 }
     
