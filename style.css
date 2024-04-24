@@ -11,9 +11,23 @@
 	display: flex;
 	width: 1200px;
 	margin: 0 auto;
+	list-style: none;
+}
+a{
+	display: flex;
+	margin: 10px;
+	color: #000;
+	list-style: none;
 }
 .ddd{
-    display: none;
+    background: #ccc;
+	width: 20%;
+	height: 200px;
+	display: none;
+
+}
+.bats{
+	display: none;
 }
 .ul-ul li {
 	list-style: none;
@@ -796,9 +810,10 @@ input {
 		top: -100px;
 		left: -60px;
 	}
-    .ddd{
+    .dddF{
         display: block;
-        width: 70%;
+        width: 100%;
+		
     }
     .orme2{
         flex-wrap: wrap;
@@ -846,6 +861,23 @@ input {
 	.sub2{
 		width: 85%;
 	}
+	.rr{
+		width: 20%;
+	}
+	.row{
+		width: 100%;
+	}
+	
+	.bats{
+		display: block;
+		width: 10%;
+	}
+	.row2{
+		background: #cacf7a;
+		width: 100%;
+		
+	}
+	
 }
     
     
