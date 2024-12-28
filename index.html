@@ -1,560 +1,268 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-		/>
-		<link rel="stylesheet" href="style.css" />
-		
-		<title>Document</title>
-	</head>
-	<body>
-		<div class="row2">
-			<div class="row">
-				<div class="rr">
-            <img src="data:image/png;base64,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">
+import logo from './logo.svg';
+import './App.css';
+import {useState} from "react"
+import Login from './Login';
+function App() {
+  const [n, setN] = useState(0); 
+  return (
+    <div className="App">
+      <div className="bord">
+        <div className="text">
+          <p>ARIK</p>
+          <p>SERVICES</p>
+          <p>WORK</p>
+          <p>ABOUT</p>
+          <p>BLOG</p>
+          <p>PAGES</p>
+          <p onClick={()=>{
+            setN(1)
+          }}>USER</p>
+          {n?<Login/>:console.log("")}
+          <div className="LET">
+            <p>LET`S TALK</p>
+          </div>
         </div>
-				<ul class="ul-ul">
-					<li>Home</li>
-					<a href="#text-2">Pages</a>
-					<a href="#bac3">Shop</a>
-					<a href="#row-nav">Blogs</a>
-					<a href="#img-im">Contact Us</a>
-					
-				</ul>
-				
-               
-			</div>
-			<div class="y">
-				<div class="text-h1">
-					<h1>
-						The Number <n>#1</n><br />
-						Choice Your Hunger<br />
-						Solution
-					</h1>
-					<p class="text-p">
-						Lorem Ipsum is simply dummy text of the printing and
-						typesetting industry. Lorem Ipsum has been the
-						industry's standard dummy text ever since the 1500s,
-					</p>
-					<div class="dis">
-						<h3 class="book">Book a tabl</h3>
-						<h3 class="book2">view More</h3>
-					</div>
-					<div class="col-dis">
-						<div class="col"><i class="fa fa-diamond"></i></div>
-						<div class="col"><i class="fa fa-diamond"></i></div>
-						<div class="col"><i class="fa fa-diamond"></i></div>
-						<div class="col"><i class="fa fa-diamond"></i></div>
-						<div class="col"><i class="fa fa-diamond"></i></div>
-					</div>
-				</div>
-				<div class="img">
-					<div class="l">
-						<img
-							src="https://swigo-fast-food-react.netlify.app/assets/bg-v1QzD1cj.png"
-						/>
-						<div class="k">
-							<div class="bac"><i class="fa fa-diamond"></i></div>
-							<div class="bac2">
-								<i class="fa fa-diamond"></i>
-							</div>
-						</div>
-					</div>
-					<div class="o">
-						<img
-							src="https://swigo-fast-food-react.netlify.app/assets/burger-8TCokDPn.png"
-							alt=""
-						/>
-					</div>
-				</div>
-			</div>
-		</div>
+      </div>
+      <div className="img">
+        <div>
+          <img src="image.png"></img>
+        </div>
+        <div className="text-2">
+          <h1>Web Designer
+            <br></br>& Developer</h1>
 
-		<!-- <p>MAS-1</p> -->
+        </div>
+        <div className="cont">
+          <p>Premium web design, development, and SEO<br></br> services to help your business stand out.</p>
+        </div>
+      </div>
+      <div className="images">
+        <img src="Container.svg"></img>
+      </div>
 
-		<div id="text-2" class="text-2">
-			<h1>Our Featured Food</h1>
-		</div>
-		<div class="nav">
-			<div class="ee">
-				<img
-					src="https://swigo-fast-food-react.netlify.app/assets/pic2-2m40Av5X.png"
-					alt=""
-				/>
-			</div>
-			<div class="border">
-				<div class="bac-0"></div>
-				<div class="img-0">
-					<img
-						src="https://swigo-fast-food-react.netlify.app/assets/pic1-vXqlO4BN.jpg"
-					/>
-				</div>
-				<div class="Pizza">
-					<div class="nav2">
-						<h3>Pizza</h3>
-						<p>Lorem ipsum dolor sit amet</p>
-						<p class="con">consectetur adipiscing.</p>
-						<h3 class="ww">$55.00</h3>
-						<div class="add-1">
-							<p class="add-0">add to Cart</p>
-						</div>
-					</div>
-				</div>
-			</div>
+     <div className='bacgrund1'>
+      <div className="content-row">
+        <div className="content">
+          <div className="web">
+            <p className="TEXT-01">01</p>
+            <h3 className="design">Web design</h3>
+            <p className="vis">Visually stunning web designs that<br></br> captivate your audience by blending your<br></br> brand voice and customer needs.</p>
+          </div>
+          <div className="row">
+            <div className="redius">
+              <img src="png.svg"></img>
+            </div>
+            <div className="col">
+              <p>About Webdesign</p>
+            </div>
 
-			<div class="border">
-				<div class="bac-0"></div>
-				<div class="img-0">
-					<img
-						src="https://swigo-fast-food-react.netlify.app/assets/pic2-Om9B-t4P.jpg"
-					/>
-				</div>
-				<div class="Pizza">
-					<div class="nav2">
-						<h3>Rice</h3>
-						<p>Lorem ipsum dolor sit amet</p>
-						<p class="con">consectetur adipiscing.</p>
-						<h3 class="ww">$50.00</h3>
-						<div class="add-1">
-							<p class="add-0">add to Cart</p>
-						</div>
-					</div>
-				</div>
-			</div>
+          </div>
+        </div>
 
-			<div class="border">
-				<div class="bac-0"></div>
-				<div class="img-0">
-					<img
-						src="https://swigo-fast-food-react.netlify.app/assets/pic3-PFs_4ETD.jpg"
-					/>
-				</div>
-				<div class="Pizza">
-					<div class="nav2">
-						<h3>Green Salad</h3>
-						<p>Lorem ipsum dolor sit amet</p>
-						<p class="con">consectetur adipiscing.</p>
-						<h3 class="ww">$45.00</h3>
-						<div class="add-1">
-							<p class="add-0">add to Cart</p>
-						</div>
-					</div>
-				</div>
-			</div>
+        <div className="content">
+          <div className="web">
+            <p className="TEXT-01">02</p>
+            <h3 className="design">Development</h3>
+            <p className="vis">Get custom web development solutions that<br></br> are tailored to your specifications, designed<br></br> to deliver a flawless user experience.</p>
+          </div>
+          <div className="row">
+            <div className="redius">
+              <img src="png.svg"></img>
+            </div>
+            <div className="col3">
+              <p>About Webflow</p>
+            </div>
 
-			<div class="border">
-				<div class="bac-0"></div>
-				<div class="img-0">
-					<img
-						src="https://swigo-fast-food-react.netlify.app/assets/pic4-YwsOiABv.jpg"
-					/>
-				</div>
-				<div class="Pizza">
-					<div class="nav2">
-						<h3>Pasta</h3>
-						<p>Lorem ipsum dolor sit amet</p>
-						<p class="con">consectetur adipiscing.</p>
-						<h3 class="ww">$35.00</h3>
-						<div class="add-1">
-							<p class="add-0">add to Cart</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="ee2">
-				<img
-					src="https://swigo-fast-food-react.netlify.app/assets/pic3-RsfypmO1.png"
-					alt=""
-				/>
-			</div>
-		</div>
+          </div>
+        </div>
 
-		<!-- <p>MAS2</p> -->
 
-		<div>
-			<div id="bac3" class="bac3">
-				<div class="why">
-					<h1>Why Choose Us ?</h1>
-				</div>
-				<div class="con2" >
-					<div class="feer">
-						<i class="fa fa-diamond"></i>
-						<p>24/7 Free Delivery</p>
-					</div>
-					<div class="fa-1">
-						<i class="fa fa-diamond"></i>
-						<p class="our">Our Restaurant is Open</p>
-						<p class="aro">Around the Clock</p>
-					</div>
-					<div class="hh">
-						<i class="fa fa-diamond"></i>
-						<p class="best">Best Chef</p>
-					</div>
-					<div class="fa-3">
-						<i class="fa fa-diamond"></i>
-						<p class="our">We Have The Freshest</p>
-						<p class="product">Product</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="text3">
-			<h1>From Our Menu</h1>
-		</div>
-		<div class="nav-3">
-			<div class="conte2">
-				<div class="pol">
-					<i class="fa fa-diamond"></i>
-					<p class="COLD-1">All</p>
-				</div>
-				<div class="pol2">
-					<i class="fa fa-diamond"></i>
-					<p>COLD DRINK</p>
-				</div>
-				<div class="pol2">
-					<i class="fa fa-diamond"></i>
-					<p>PIZZA</p>
-				</div>
-				<div class="pol2">
-					<i class="fa fa-diamond"></i>
-					<p>SALAD</p>
-				</div>
-				<div class="pol2">
-					<i class="fa fa-diamond"></i>
-					<p>SWEETS</p>
-				</div>
-				<div class="pol2">
-					<i class="fa fa-diamond"></i>
-					<p>SPICY</p>
-				</div>
-				<div class="pol2">
-					<i class="fa fa-diamond"></i>
-					<p>BURGER</p>
-				</div>
-			</div>
-			<div class="all-a">
-				<p>VIEV ALL</p>
-			</div>
-		</div>
-		<div id="row-nav" class="row-nav">
-			<div class="border2">
-				<div class="images">
-					<p class="ff">TOP SELLER</p>
-					<img
-						src="https://swigo-fast-food-react.netlify.app/assets/pic1-oqDA_vhn.jpg"
-					/>
-					<div class="bacv">
-						<i class="fa fa-star-o"></i>
-						<p class="hjk">4.5</p>
-					</div>
-				</div>
-				<div class="bur">
-					<div>
-						<h2>Burger</h2>
-						<p class="it">
-							It is a long established fact that a reader will
-						</p>
-						<p class="be">be distracted by the readable.</p>
-						<h2 class="asd">$30</h2>
-					</div>
-				</div>
-			</div>
+        <div className="content">
+          <div className="web">
+            <p className="TEXT-01">03</p>
+            <h3 className="design">Content & Seo</h3>
+            <p className="vis">Proven SEO strategies that enhance your<br></br> online performance, bringing you to the<br></br> forefront of organic search results.</p>
+          </div>
+          <div className="row">
+            <div className="redius">
+              <img src="png.svg"></img>
+            </div>
+            <div className="col3">
+              <p>About SEO</p>
+            </div>
 
-			<div class="border2">
-				<div class="images">
-					<p class="ff">TOP SELLER</p>
-					<img
-						src="https://swigo-fast-food-react.netlify.app/assets/pic2-nQZKTqIG.jpg"
-					/>
-					<div class="bacv">
-						<i class="fa fa-star-o"></i>
-						<p class="hjk">4.5</p>
-					</div>
-				</div>
-				<div class="bur">
-					<div>
-						<h2>Burger</h2>
-						<p class="it">
-							It is a long established fact that a reader will
-						</p>
-						<p class="be">be distracted by the readable.</p>
-						<h2 class="asd">$60</h2>
-					</div>
-				</div>
-			</div>
+          </div>
+        </div>
+      </div>
+      </div>
 
-			<div class="border2">
-				<div class="images">
-					<p class="ff">TOP SELLER</p>
-					<img
-						src="https://swigo-fast-food-react.netlify.app/assets/pic3-FWEUwzGr.jpg"
-					/>
-					<div class="bacv">
-						<i class="fa fa-star-o"></i>
-						<p class="hjk">4.5</p>
-					</div>
-				</div>
-				<div class="bur">
-					<div>
-						<h2>Burger</h2>
-						<p class="it">
-							It is a long established fact that a reader will
-						</p>
-						<p class="be">be distracted by the readable.</p>
-						<h2 class="asd">$80</h2>
-					</div>
-				</div>
-			</div>
-		</div>
+     <div className='bacgrund2'>     
+      <div className="images-img">
+        <div className="kontrol">
+          <div className="sel">
+            <h3>Selected Work</h3>
+          </div>
+          <div className="row">
+            <div className="redius">
+              <img src="png.svg"></img>
+            </div>
+            <div className="col3">
+              <p>About SEO</p>
+            </div>
 
-		<div class="row-nav">
-			<div class="border2">
-				<div class="images">
-					<p class="ff">TOP SELLER</p>
-					<img
-						src="https://swigo-fast-food-react.netlify.app/assets/pic4--PtyVMTs.jpg"
-					/>
-					<div class="bacv">
-						<i class="fa fa-star-o"></i>
-						<p class="hjk">4.5</p>
-					</div>
-				</div>
-				<div class="bur">
-					<div>
-						<h2>Pineapple Soup</h2>
-						<p class="it">
-							It is a long established fact that a reader will
-						</p>
-						<p class="be">be distracted by the readable.</p>
-						<h2 class="asd">$30</h2>
-					</div>
-				</div>
-			</div>
+          </div>
+        </div>
+        <div className="images-2">
+          <img src="Grid.png"></img>
+        </div>
+      </div>
+    </div>
+      <div className="border-col">
+        <div className="row-col">
+          <div className="img-0">
+            <img src="image.png"></img>
+          </div>
+          <div className='web-1'>
+            <div>
+              <h3>Web Designer
+                & Developer</h3>
+              <p>3147 Patterson Street, Houston, TX, 77002</p>
+            </div>
+          </div>
+        </div>
 
-			<div class="border2">
-				<div class="images">
-					<p class="ff">TOP SELLER</p>
-					<img
-						src="https://swigo-fast-food-react.netlify.app/assets/pic5-MZOoJa5E.jpg"
-					/>
-					<div class="bacv">
-						<i class="fa fa-star-o"></i>
-						<p class="hjk">4.5</p>
-					</div>
-				</div>
-				<div class="bur">
-					<div>
-						<h2>Momos</h2>
-						<p class="it">
-							It is a long established fact that a reader will
-						</p>
-						<p class="be">be distracted by the readable.</p>
-						<h2 class="asd">$30</h2>
-					</div>
-				</div>
-			</div>
+        <div className="bac">
+          <div className="inp-1">
+            <input type="text" placeholder="Name"></input>
+            <input type="text" placeholder="Last Name"></input>
+          </div>
+          <div className="inp-1">
+            <input type="email" placeholder="email"></input>
+            <input type="password" placeholder="password"></input>
+          </div>
+          <div className="but">
+            <p>add User</p>
+          </div>
+        </div>
+      </div>
+      <div className="cont-pol">
+        <div className="att-border">
+          <div className="img-png">
+            <img src="img.1.png"></img>
+          </div>
+          <div className="text-p">
+            <div>
+              <p>23rd Aug 2023</p>
+              <h3 className="how">How to Build a Stunning Website<br></br> with Framer</h3>
+              <p className="learn">Learn how to create an impressive website using<br></br> Framer with our step-by-step guide.</p>
+              <p className="bor-p">WEbdesign</p>
+            </div>
+          </div>
+        </div>
 
-			<div class="border2">
-				<div class="images">
-					<p class="ff">TOP SELLER</p>
-					<img
-						src="https://swigo-fast-food-react.netlify.app/assets/pic6-bPSacfzR.jpg"
-					/>
-					<div class="bacv">
-						<i class="fa fa-star-o"></i>
-						<p class="hjk">4.5</p>
-					</div>
-				</div>
-				<div class="bur">
-					<div>
-						<h2>Pancake</h2>
-						<p class="it">
-							It is a long established fact that a reader will
-						</p>
-						<p class="be">be distracted by the readable.</p>
-						<h2 class="asd">$20</h2>
-					</div>
-				</div>
-			</div>
-		</div>
+        <div className="att-border">
+          <div className="img-png">
+            <img src="img.2.png"></img>
+          </div>
+          <div className="text-p">
+            <div>
+              <p>23rd Aug 2023</p>
+              <h3 className="how">10 website elements for maximum<br></br> user engagement</h3>
+              <p className="learn">10 website elements to engage users, from intuitive<br></br> navigation to compelling visuals.</p>
+              <p className="bor-p">WEbdesign</p>
+            </div>
+          </div>
+        </div>
 
-		<div id="img-im" class="img-im">
-			<div class="jga">
-				<div class="bookol">
-					<div class="sdl">
-						<h1>Book a Table</h1>
-						<p class="i">
-							Lorem Ipsum is that it has a more-or-less normal
-							distribution
-						</p>
-						<p class="of1">
-							of letters, to using making it look like readable
-							English.
-						</p>
-					</div>
-				</div>
-				<div class="inp">
-					<div class="yy">
-						<i class="fa fa-diamond"></i>
-						<input type="text" placeholder="YOUR NAME" />
-					</div>
-					<div class="border5"></div>
+        <div className="att-border">
+          <div className="img-png">
+            <img src="img.3.png"></img>
+          </div>
+          <div className="text-p">
+            <div>
+              <p>23rd Aug 2023</p>
+              <h3 className="how">The importance of content in driving<br></br> website traffic</h3>
+              <p className="learn">Quality content is king. Learn how to create<br></br> valuable, SEO-optimized content.</p>
+              <p className="bor-p">WEbdesign</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-					<div class="yy2">
-						<i class="fa fa-diamond"></i>
-						<input
-							class="inp-1"
-							type="text"
-							placeholder="PHONE NUMBER"
-						/>
-					</div>
-					<div class="border5"></div>
-				</div>
-				<div class="bor">
-					<div class="border3"></div>
-					<div class="border4"></div>
-				</div>
 
-				<div class="inp2">
-					<div class="yy">
-						<i class="fa fa-diamond"></i>
-						<input type="text" placeholder="NUMBER OF PEOPL" />
-					</div>
-					<div class="border5"></div>
-					<div class="yy2">
-						<i class="fa fa-diamond"></i>
-						<input type="text" placeholder="YOUR EMAIL" />
-					</div>
-					<div class="border5"></div>
-				</div>
+      <div className="cont-pol">
+        <div className="att-border">
+          <div className="img-png">
+            <img src="img.4.png"></img>
+          </div>
+          <div className="text-p">
+            <div>
+              <p>23rd Aug 2023</p>
+              <h3 className="how">10 common web development<br></br> mistakes to avoid</h3>
+              <p className="learn">10 common web development mistakes and improve<br></br> your site's functionality and user experience.</p>
+              <p className="bor-p">WEbdesign</p>
+            </div>
+          </div>
+        </div>
 
-				<div class="bor">
-					<div class="border3"></div>
-					<div class="border4"></div>
-				</div>
+        <div className="att-border">
+          <div className="img-png">
+            <img src="img.5.png"></img>
+          </div>
+          <div className="text-p">
+            <div>
+              <p>23rd Aug 2023</p>
+              <h3 className="how">Why responsive web design is critical<br></br> for your business</h3>
+              <p className="learn">Responsive web design ensures your site looks great<br></br> and performs well on all devices.</p>
+              <p className="bor-p">WEbdesign</p>
+            </div>
+          </div>
+        </div>
 
-				<div class="inp3">
-					<div class="yy">
-						<i class="fa fa-diamond"></i>
-						<input type="text" placeholder="TIME" />
-					</div>
-					<div class="border5"></div>
-					<div class="yy2">
-						<i class="fa fa-diamond"></i>
-						<input type="text" placeholder="DATE" />
-					</div>
-					<div class="border5"></div>
-				</div>
-				<div class="bor">
-					<div class="border3"></div>
-					<div class="border4"></div>
-				</div>
-				<div class="pol-p">
-					<h3>book a table</h3>
-				</div>
-			</div>
+        <div className="att-border">
+          <div className="img-png">
+            <img src="img.6.png"></img>
+          </div>
+          <div className="text-p">
+            <div>
+              <p>23rd Aug 2023</p>
+              <h3 className="how">The art of SEO writing: How to write<br></br> content that ranks on Google</h3>
+              <p className="learn">Optimize your website with expert tips on writing<br></br> content that ranks high on Google.</p>
+              <p className="bor-p">WEbdesign</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div className='row-pol2'>
+            <div className='ll'>
+              <div className='ark'>
+              <h2>Arik Andersson</h2>
+              </div>
+              <div className='img-png2'>
+              <img  src="image.png"></img>
+              </div>
+              <div className='ark'>
+              <h2>Arik Andersson</h2>
+              </div>
+            </div>
+            <div className='that'>
+              <div className='txt-h2'>
+                <h1>A website that leaves<br></br> 
+                a lasting impression!</h1>
+              </div>
+              <div className='txt-p'>
+                <p>Hi, I'm Arik Andersson - a freelancer specializing in premium web<br></br> design, development, and SEO services. I'm passionate about<br></br> creating unique and effective solutions for my clients, and I<br></br> bring a personal touch to<br></br> every project. Let's work together to bring your vision to life!</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  
+   
+   </div> 
 
-			<div class="hj">
-				<div class="txt">
-					<h1>Contact Info</h1>
-					<p>
-						Lorem Ipsum is simply dummy text of the printing
-						typesetting industry.
-					</p>
-				</div>
-				<div class="nom">
-					<i class="fa fa-diamond"></i>
-					<p>
-						1247/Plot No. 39, 15th Phase, Colony, Kkatpally,
-						Hyderabad
-					</p>
-				</div>
-				<div class="nom">
-					<i class="fa fa-diamond"></i>
-					<p>
-						+91 987-654-3210<br />
-						+91 123-456-7890
-					</p>
-				</div>
-				<div class="nom">
-					<i class="fa fa-diamond"></i>
-					<p>info@example.com <br />info@example.com</p>
-				</div>
-			</div>
-		</div>
-		<div class="orme2">
-			<div>
-				<img
-					src="data:image/png;base64,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"
-				/>
-				<p class="oremio">
-					orem Ipsum is simply dummy text of the printing and
-					<br />typesetting industry.
-				</p>
-			</div>
+  );
+}
 
-			<div>
-				<div>
-					<h2>Subscribe To Our Newsletter</h2>
-					<div class="sub2">
-						<input
-							class="orme3"
-							type="text"
-							placeholder="Enter your email"
-						/>
-						<p class="sub">Subscribe</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="border-0"></div>
+export default App;
 
-		<div class="our1">
-			<div>
-				<div>
-					<h2>OUR LINKS</h2>
-				</div>
-				<div class="txt3">
-					<p>Home</p>
-					<p>About Us</p>
-					<p>Services</p>
-					<p>Team</p>
-					<p>Blog</p>
-				</div>
-			</div>
-
-			<div>
-				<div>
-					<h2>HELP CENTER</h2>
-				</div>
-				<div class="txt3">
-					<p>FAQ</p>
-					<p>Shop</p>
-					<p>Category Filter</p>
-					<p>Testimonials</p>
-					<p>Contact Us</p>
-				</div>
-			</div>
-		</div>
-		<div class="qq"></div>
-		<div class="all1">
-			<div>
-				<div>
-					<p>Copyright 2023 All rights reserved.</p>
-				</div>
-			</div>
-
-			<div>
-				<div>
-					<p>Crafted With by DexignZone</p>
-				</div>
-			</div>
-		</div>
-		<script src="app.js"></script>
-	
-	</body>
-</html>
